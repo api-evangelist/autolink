@@ -1,0 +1,53 @@
+generated: '2026-09-26'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 3
+  own: 2
+  other_domain: 1
+  platform: 0
+  roles:
+  - api
+  - other
+  - website
+hosts:
+- host: api.com.cn
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: api.com.cn
+  role: api
+  relation: other-domain
+- host: dev.auto-link.com.cn
+  found_by:
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types: []
+  serves:
+  - docs
+  registrable_domain: auto-link.com.cn
+  role: other
+  relation: own
+- host: en.auto-link.com.cn
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - PrivacyPolicy
+  - Newsroom
+  - Website
+  - Documentation
+  serves:
+  - docs
+  registrable_domain: auto-link.com.cn
+  role: website
+  relation: own

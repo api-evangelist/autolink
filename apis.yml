@@ -1,23 +1,72 @@
 aid: autolink
+
 name: Autolink
-description: 'Autolink is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Autolink, also known as Wuxi Autolink Intelligence Tech Co., Ltd, provides vehicle computing solutions integrating software and hardware
+  for intelligent cockpits, ADAS, and zone controllers. The company offers a full-stack in‑house R&D platform, advanced manufacturing, and a collaborative
+  ecosystem to support software‑defined vehicle architectures and smart mobility.
+
 url: https://raw.githubusercontent.com/api-evangelist/autolink/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
 - Company
-apis: []
+- Automotive
+- Vehicle Computing
+- Intelligent Cockpit
+- ADAS
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: WellKnown
+  url: well-known/autolink-well-known.yml
+- type: Hosts
+  url: hosts/autolink-hosts.yml
+- type: PrivacyPolicy
+  url: https://en.auto-link.com.cn/privacy_policy.html
+- type: Newsroom
+  url: https://en.auto-link.com.cn/news/details_539_2712.html
+- type: DomainSecurity
+  url: security/autolink-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/autolink
+  url: https://en.auto-link.com.cn
+- type: Documentation
+  url: https://en.auto-link.com.cn/develop/index.html
+
+apis:
+- name: Autolink API
+  description: Vehicle computing API documented at the developer portal.
+  humanURL: https://en.auto-link.com.cn/develop/index.html
+  aid: autolink:autolink-api
+
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: API spec at https://dev.auto-link.com.cn/openapi.json returns 401 token required.
+  evidence:
+  - url: https://dev.auto-link.com.cn/openapi.json
+    status: 401
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
